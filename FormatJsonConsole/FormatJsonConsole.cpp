@@ -29,7 +29,7 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	std::cout << "Read file..... ";
 
-  while((ch = in.get()) != EOF) {
+    while((ch = in.get()) != EOF) {
 	  if (char(ch)=='\n') continue ;
 	  if (char(ch)=='\t') continue ;
 
@@ -44,7 +44,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	  		  ++indent;
 	  		  for(i=0;i<=indent;i++) out<< '\t' ;
 	  	  }
-    	  break;
+    	break;
 	    case '}':
 	    case ']':
 	  	  if (!quoted)
@@ -75,16 +75,16 @@ int _tmain(int argc, _TCHAR* argv[])
 	  	  //if (!quoted) out<< " " << std::endl;
 	    break;
 	    default:
-	  	   out<< ch;
-    		 break;
+	  	    out<< ch;
+    		break;
 	  }
 	  prev_ch=ch;
 
 	  fe=in.eof();
-    if (fe) break;
+      if (fe) break;
 	  if (in.fail()) in.clear();
 
-  }
+    }
 
 	out.flush();
 	out.close();
